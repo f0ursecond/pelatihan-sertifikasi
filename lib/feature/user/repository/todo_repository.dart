@@ -1,4 +1,5 @@
 import 'dart:convert';
+
 import 'package:http/http.dart' as http;
 import 'package:pelatihan_sertifikasi/model/todo_model.dart';
 
@@ -11,6 +12,28 @@ class TodoRepository {
     switch (response.statusCode) {
       case 200:
         return (json.decode(response.body) as List).map((e) => TodoModel.fromJson(e)).toList();
+      case 400:
+        throw Exception('Bad request: ${response.body}');
+      case 401:
+        throw Exception('Unauthorized: ${response.body}');
+      case 403:
+        throw Exception('Forbidden: ${response.body}');
+      case 404:
+        throw Exception('Not found: ${response.body}');
+      case 500:
+        throw Exception('Internal server error: ${response.body}');
+      default:
+        throw Exception('Failed to load todos: ${response.statusCode} ${response.body}');
+    }
+  }
+
+  Future<TodoModel> detailTodo({required String id}) async {
+    final response = await http.get(Uri.parse('$baseUrl/$id'));
+
+    switch (response.statusCode) {
+      case 200:
+        final data = jsonDecode(response.body);
+        return TodoModel.fromJson(data);
       case 400:
         throw Exception('Bad request: ${response.body}');
       case 401:
