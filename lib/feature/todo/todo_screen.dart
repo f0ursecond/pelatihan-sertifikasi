@@ -122,10 +122,15 @@ class _TodoScreenState extends State<TodoScreen> {
                                 //   ),
                                 //   child: Icon(todo.isDone ?? false ? Icons.check : Icons.close),
                                 // ),
-                                Icon(
-                                  Icons.edit,
-                                  color: Colors.blue,
-                                ),
+                                IconButton(
+                                    onPressed: () {
+                                      Navigator.push(context,
+                                          MaterialPageRoute(builder: (context) => AddEditTodoScreen(todo: todo)));
+                                    },
+                                    icon: Icon(
+                                      Icons.edit,
+                                      color: Colors.blue,
+                                    )),
                                 SizedBox(width: 12),
                                 IconButton(
                                   onPressed: () {

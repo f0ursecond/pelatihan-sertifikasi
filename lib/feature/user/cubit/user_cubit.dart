@@ -4,7 +4,7 @@
 
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:pelatihan_sertifikasi/feature/user/repository/user_repository.dart';
+import 'package:pelatihan_sertifikasi/repository/user_repository.dart';
 import 'package:pelatihan_sertifikasi/model/user_model.dart';
 
 part 'user_state.dart';

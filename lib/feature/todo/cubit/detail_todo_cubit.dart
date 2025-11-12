@@ -2,7 +2,7 @@
 
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:pelatihan_sertifikasi/feature/user/repository/todo_repository.dart';
+import 'package:pelatihan_sertifikasi/repository/todo_repository.dart';
 import 'package:pelatihan_sertifikasi/model/todo_model.dart';
 
 part 'detail_todo_state.dart';

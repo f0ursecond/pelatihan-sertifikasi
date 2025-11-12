@@ -4,6 +4,7 @@ import 'package:pelatihan_sertifikasi/feature/todo/cubit/create_todo_cubit.dart'
 import 'package:pelatihan_sertifikasi/feature/todo/cubit/delete_todo_cubit.dart';
 import 'package:pelatihan_sertifikasi/feature/todo/cubit/detail_todo_cubit.dart';
 import 'package:pelatihan_sertifikasi/feature/todo/cubit/todo_cubit.dart';
+import 'package:pelatihan_sertifikasi/feature/todo/cubit/update_todo_cubit.dart';
 import 'package:pelatihan_sertifikasi/feature/todo/todo_screen.dart';
 import 'package:pelatihan_sertifikasi/feature/user/cubit/user_cubit.dart';
 
@@ -32,6 +33,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => DeleteTodoCubit(),
+        ),
+        BlocProvider(
+          create: (context) => UpdateTodoCubit(),
         ),
       ],
       child: MaterialApp(
